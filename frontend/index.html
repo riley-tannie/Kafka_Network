@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Router Command System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Router Command System</h1>
+        <p>Send commands to your GNS3 routers</p>
+    </header>
+
+    <div class="card">
+
+        <label for="router">Select Router</label>
+
+        <select id="router">
+            <option value="192.168.216.2">
+                R1 — 192.168.216.2
+            </option>
+
+            <option value="10.0.0.2">
+                R2 — 10.0.0.2
+            </option>
+        </select>
+
+
+        <label for="command">Router Command</label>
+
+        <input
+            type="text"
+            id="command"
+            placeholder="Example: show ip interface brief"
+        >
+
+
+        <button id="executeBtn" onclick="executeCommand()">
+            Execute Command
+        </button>
+
+        <div id="status"></div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Router Output</h2>
+
+        <pre id="output">Waiting for command...</pre>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Command History</h2>
+
+        <div id="history">
+            No commands executed yet.
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
